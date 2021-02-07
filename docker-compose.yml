@@ -1,0 +1,20 @@
+version: "3"
+services:
+  #web
+  ubuntu1804test:
+    container_name: ubuntu1804test
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    privileged: true
+    # environment:
+    #   APACHE_LOG_DIR: /var/log/apache2
+    #   TZ: "Asia/Tokyo"
+    volumes:
+      - ./opt:/root/opt
+    # ports:
+    #   - 80:80
+    #   - 8087:8087
+    tty: true
+    stdin_open: true
+
